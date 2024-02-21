@@ -12,13 +12,12 @@
 </head>
 <body>
     <h1 id="status">Not Connected</h1>
+    <script>
+        var connectionStatusEvent = game.ReplicatedStorage.WaitForChild("ConnectionStatusEvent");
+
+        connectionStatusEvent.OnClientEvent.Connect(function(status) {
+            updateStatus(status);
+        });
+    </script>
 </body>
-
-<script>
-    var connectionStatusEvent = game.ReplicatedStorage.WaitForChild("ConnectionStatusEvent");
-
-    connectionStatusEvent.OnClientEvent.Connect(function(status) {
-        updateStatus(status);
-    });
-</script>
 </html>
