@@ -8,24 +8,17 @@
         function updateStatus(status) {
             document.getElementById("status").innerText = status;
         }
-
-        // Function to handle the incoming connection package
-        function handleConnectionPackage() {
-            // Set the status to "Connected"
-            updateStatus("Error");
-
-            // Optionally, you can send a response back to the Roblox script if needed
-            // This could be done using fetch or any other method to communicate with your server
-        }
-
-        // Check connection status initially when the page loads
-        window.onload = function() {
-            // Assume the connection package is received somehow, call the function to handle it
-            handleConnectionPackage();
-        };
     </script>
 </head>
 <body>
     <h1 id="status">Not Connected</h1>
 </body>
+
+<script>
+    var connectionStatusEvent = game.ReplicatedStorage.WaitForChild("ConnectionStatusEvent");
+
+    connectionStatusEvent.OnClientEvent.Connect(function(status) {
+        updateStatus(status);
+    });
+</script>
 </html>
