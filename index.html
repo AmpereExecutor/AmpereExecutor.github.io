@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connection Status</title>
-    <script>
-        function updateStatus(status) {
-            document.getElementById("status").innerText = status;
-        }
-    </script>
+    <title>Connected Packet Checker</title>
 </head>
 <body>
-    <h1 id="status">Not Connected</h1>
-    <script>
-        var connectionStatusEvent = game.ReplicatedStorage.WaitForChild("ConnectionStatusEvent");
-
-        connectionStatusEvent.OnClientEvent.Connect(function(status) {
-            updateStatus(status);
-        });
-    </script>
+    <button id="checkButton">Check Connection</button>
+    <script src="script.js"></script>
 </body>
 </html>
