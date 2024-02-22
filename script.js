@@ -13,6 +13,6 @@ document.getElementById("checkButton").addEventListener("click", function() {
             }
         }
     };
-    xmlhttp.open("GET", "https://ampereexecutor.github.io", true);
+    xmlhttp.open("GET", "https://ampereexecutor.github.io/", true);
     xmlhttp.send();
 });
