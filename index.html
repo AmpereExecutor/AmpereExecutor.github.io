@@ -6,7 +6,16 @@
     <title>Ampere Injector</title>
 </head>
 <body>
-    <button id="checkButton">Connect</button>
-    <script src="script.js"></script>
+    <script>
+        const connectionStatusElement = document.getElementById("connection-status")
+      
+        function handleConnectionRequest(event) {
+          if (event.data.type === "connected") {
+            connectionStatusElement.textContent = "Connected"
+          }
+        }
+      
+        window.addEventListener("message", handleConnectionRequest)
+      </script>
 </body>
 </html>
